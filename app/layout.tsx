@@ -10,6 +10,11 @@ import { siteConfig } from '@/config/siteConfig'
 export const metadata: Metadata = {
   title: siteConfig.seo.title,
   description: siteConfig.seo.description,
+  icons: {
+    icon: "/avatar.svg",
+    shortcut: "/avatar.svg",
+    apple: "/avatar.svg",
+  },
 }
 
 export default function RootLayout({

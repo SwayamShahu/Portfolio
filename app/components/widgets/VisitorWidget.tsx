@@ -25,7 +25,7 @@ export default function VisitorWidget() {
       style={{ bottom: 80, left: 320, zIndex: 5, width: 160 }}
     >
       <div className="widget-handle" onPointerDown={(e) => dragControls.start(e)}>
-        <div style={{ width: 24, height: 2, borderRadius: 1, background: "rgba(255,255,255,0.12)" }} />
+        <div style={{ width: 24, height: 2, borderRadius: 1, background: "var(--handle-indicator)" }} />
       </div>
 
       <div className="widget-body px-4 py-3">

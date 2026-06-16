@@ -1,104 +1,73 @@
 /**
  * experience.ts
- * ─────────────────────────────────────────────────────────────
- *  - `experience`        → full cards shown in the Experience window
- *                          (click one to open a modal with achievements + links).
- *  - `resumeExperience`  → condensed bullets shown on the Résumé window.
- *  - `education`         → single degree entry for the Résumé.
- *  - `teaching`          → free-form bullets for the Teaching section.
- *
- * The two experience lists are separate on purpose: the main site shows
- * every role, while the résumé groups multiple roles into summaries.
- * ─────────────────────────────────────────────────────────────
  */
 
 export interface ExperienceItem {
   company: string
   role: string
-  /** e.g. "Jun 2024 – Present" or "2023". */
   period: string
-  /** One-line summary shown on the card. */
   description: string
   tech: string[]
-  /** Bullet points shown in the modal. */
   achievements: string[]
-  /** Optional related links shown at the bottom of the modal. */
   links?: { type: string; url: string; label: string }[]
 }
 
 export const experience: ExperienceItem[] = [
   {
-    company: "Acme Corp",
-    role: "Senior Software Engineer",
-    period: "Jan 2024 – Present",
-    description: "Short one-line summary of what you do here.",
-    tech: ["TypeScript", "React", "Node.js", "PostgreSQL"],
+    company: "TalentXMinds",
+    role: "Software Developer",
+    period: "Mar 2026 – Present",
+    description: "Building Spring Boot APIs and ReactJS frontends for client projects end-to-end.",
+    tech: ["Spring Boot", "ReactJS", "Docker", "Claude Code", "Java"],
     achievements: [
-      "Led the migration of a critical service from X to Y with zero downtime.",
-      "Mentored three junior engineers through design reviews and pairing.",
-      "Shipped a feature that drove a measurable 12% improvement in activation.",
+      "Contributed to 2+ client projects building Spring Boot APIs and ReactJS frontends, handling business logic, validation, and error handling end-to-end.",
+      "Developed Resume Builder – an AI-powered tool that generates ATS-optimized resumes with semantic scoring.",
+      "Used Claude Code to reduce boilerplate and cut feature turnaround by ~30%.",
+      "Containerized services with Docker for consistent team environments.",
     ],
   },
   {
-    company: "Globex",
-    role: "Software Engineer",
-    period: "Jun 2022 – Dec 2023",
-    description: "What you built here, in a sentence.",
-    tech: ["Go", "Kubernetes", "Redis"],
+    company: "HOTIT Institute Pvt. Ltd.",
+    role: "Web Developer Intern",
+    period: "Jun 2024 – Jul 2024",
+    description: "Built responsive web pages improving UI consistency and user engagement.",
+    tech: ["HTML5", "CSS3", "Bootstrap", "Agile/Scrum"],
     achievements: [
-      "Built and owned the internal deploy pipeline used by 40+ engineers.",
-      "Reduced p99 latency of the core API from 800ms to 110ms.",
-    ],
-    links: [
-      { type: "website", url: "https://example.com", label: "example.com" },
-    ],
-  },
-  {
-    company: "Initech",
-    role: "Software Engineering Intern",
-    period: "Summer 2021",
-    description: "Your internship — one line.",
-    tech: ["Python", "AWS"],
-    achievements: [
-      "Wrote an internal data pipeline tool still in use today.",
+      "Built 5+ responsive web pages using HTML5, CSS3, and Bootstrap, improving UI consistency and increasing user engagement by 20%.",
+      "Delivered all sprint tasks on time within defined SLAs working in an Agile/Scrum team.",
     ],
   },
 ]
-
-// ── Résumé-only condensed version ────────────────────────────────────
 
 export interface ResumeExperienceItem {
   company: string
   role: string
   period: string
-  /** Optional list of sub-companies (e.g. for a contractor umbrella). */
   subRoles?: string[]
   bullets: string[]
 }
 
 export const resumeExperience: ResumeExperienceItem[] = [
   {
-    company: "Acme Corp",
-    role: "Senior Software Engineer",
-    period: "Jan 2024 – Present",
+    company: "TalentXMinds",
+    role: "Software Developer",
+    period: "Mar 2026 – Present",
     bullets: [
-      "Led the migration of a critical service from X to Y with zero downtime.",
-      "Mentored three junior engineers through design reviews and pairing.",
-      "Shipped a feature that drove a measurable 12% improvement in activation.",
+      "Contributed to 2+ client projects building Spring Boot APIs and ReactJS frontends end-to-end.",
+      "Developed AI-powered Resume Builder with ATS semantic scoring.",
+      "Used Claude Code to reduce boilerplate and cut feature turnaround by ~30%; containerized services with Docker.",
     ],
   },
   {
-    company: "Globex",
-    role: "Software Engineer",
-    period: "Jun 2022 – Dec 2023",
+    company: "HOTIT Institute Pvt. Ltd., Nagpur",
+    role: "Web Developer Intern",
+    period: "Jun 2024 – Jul 2024",
     bullets: [
-      "Built and owned the internal deploy pipeline used by 40+ engineers.",
-      "Reduced p99 latency of the core API from 800ms to 110ms.",
+      "Built 5+ responsive web pages using HTML5, CSS3, and Bootstrap, increasing user engagement by 20%.",
+      "Delivered all sprint tasks on time in an Agile/Scrum team.",
     ],
   },
 ]
-
-// ── Education + Teaching ─────────────────────────────────────────────
 
 export interface EducationItem {
   school: string
@@ -107,12 +76,14 @@ export interface EducationItem {
 }
 
 export const education: EducationItem = {
-  school: "State University",
-  degree: "B.Sc. — Computer Science",
-  period: "2018 – 2022",
+  school: "S. B. Jain Institute of Technology, Management & Research, Nagpur",
+  degree: "B.Tech — Computer Science & Engineering (CGPA: 8.93/10)",
+  period: "2022 – 2026",
 }
 
 export const teaching: string[] = [
-  "Ran a weekend study group on data structures for ~15 local students.",
-  "Guest-lectured an intro-to-web-dev class at my alma mater.",
+  "Published a peer-reviewed paper in the I-Manager Journal on AI/ML applications.",
+  "Presented research at IEEE AICARE 2025, UEM Kolkata — received Presenter Certificate.",
+  "1st Runner-Up at TechTrek Hackathon, G. H. Raisoni College, Nagpur.",
+  "Solved 100+ DSA problems on LeetCode.",
 ]

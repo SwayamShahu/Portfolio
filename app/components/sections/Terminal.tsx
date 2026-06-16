@@ -138,7 +138,7 @@ export default function Terminal({ compact = false, onOpen, onClose }: TerminalP
   return (
     <div
       className={`font-mono text-[12px] leading-relaxed h-full flex flex-col cursor-text select-text ${compact ? "p-4" : "p-5"}`}
-      style={{ background: "var(--terminal-bg)", color: "rgba(255,255,255,0.7)" }}
+      style={{ background: "var(--terminal-bg)", color: "var(--text-secondary)" }}
       onClick={() => inputRef.current?.focus()}
     >
       {/* Output region — role="log" so screen readers announce command output. */}
@@ -154,10 +154,10 @@ export default function Terminal({ compact = false, onOpen, onClose }: TerminalP
             className="whitespace-pre-wrap break-all"
             style={{
               color:
-                line.type === "input"  ? "rgba(255,255,255,0.85)" :
-                line.type === "error"  ? "rgba(255,100,100,0.8)"  :
-                line.type === "system" ? "rgba(255,255,255,0.35)" :
-                                         "rgba(255,255,255,0.5)",
+                line.type === "input"  ? "var(--text-primary)"   :
+                line.type === "error"  ? "rgba(220,60,60,0.9)"   :
+                line.type === "system" ? "var(--text-faint)"      :
+                                         "var(--text-secondary)",
             }}
           >
             {line.text}
@@ -169,9 +169,9 @@ export default function Terminal({ compact = false, onOpen, onClose }: TerminalP
       {/* Input row */}
       <div
         className="flex items-center gap-0 flex-none pt-1"
-        style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+        style={{ borderTop: "1px solid var(--separator)" }}
       >
-        <span style={{ color: "rgba(255,255,255,0.4)", whiteSpace: "nowrap" }} aria-hidden="true">
+        <span style={{ color: "var(--text-muted)", whiteSpace: "nowrap" }} aria-hidden="true">
           {getPrompt()}
         </span>
         <input
@@ -185,8 +185,8 @@ export default function Terminal({ compact = false, onOpen, onClose }: TerminalP
           autoCorrect="off"
           autoCapitalize="off"
           aria-label="Terminal input"
-          className="flex-1 bg-transparent outline-none caret-white min-w-0"
-          style={{ color: "rgba(255,255,255,0.85)" }}
+          className="flex-1 bg-transparent outline-none caret-current min-w-0"
+          style={{ color: "var(--text-primary)" }}
         />
       </div>
     </div>

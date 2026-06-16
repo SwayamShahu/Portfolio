@@ -21,13 +21,13 @@ export default function LinksWidget() {
       style={{ top: 228, left: 24, zIndex: 5, width: 240 }}
     >
       <div className="widget-handle" onPointerDown={(e) => dragControls.start(e)}>
-        <div style={{ width: 24, height: 2, borderRadius: 1, background: "rgba(255,255,255,0.12)" }} />
+        <div style={{ width: 24, height: 2, borderRadius: 1, background: "var(--handle-indicator)" }} />
       </div>
 
       <div className="widget-body">
         <div className="px-3 pt-2.5 pb-1" style={{ borderBottom: "1px solid var(--separator)" }}>
           <p className="font-mono text-[9px] uppercase tracking-[0.1em]" style={{ color: "var(--text-faint)" }}>
-            Links · worth reading
+            Research · Papers
           </p>
         </div>
 

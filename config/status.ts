@@ -1,16 +1,8 @@
 /**
  * status.ts
- * ─────────────────────────────────────────────────────────────
- * Data for the StatusWidget shown in the desktop's top-right
- * corner. Flip `available` to false to render a muted indicator.
- *
- * The `currently` rows are free-form "label + value" pairs — add
- * or remove as many as you want.
- * ─────────────────────────────────────────────────────────────
  */
 
 export interface StatusRow {
-  /** Short label (5-10 chars reads best). */
   label: string
   value: string
 }
@@ -25,8 +17,8 @@ export const status: StatusConfig = {
   available: true,
   label: "Open to work",
   currently: [
-    { label: "Building", value: "Something you're excited about" },
-    { label: "Reading",  value: "A book that's changed how you think" },
-    { label: "Writing",  value: "Your next blog post" },
+    { label: "Building",   value: "AI-powered Resume Builder @ TalentXMinds" },
+    { label: "Learning",   value: "System Design" },
+    { label: "Solving",    value: "DSA problems on LeetCode (100+ done)" },
   ],
 }

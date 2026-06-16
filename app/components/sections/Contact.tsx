@@ -23,7 +23,7 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
       >
         Contact
       </p>
-      <h2 className="text-[22px] font-semibold text-white mb-1">{contact.heading}</h2>
+      <h2 className="text-[22px] font-semibold mb-1" style={{ color: "var(--text-primary)" }}>{contact.heading}</h2>
       <p className="text-[13px] mb-7" style={{ color: "var(--text-secondary)" }}>
         {contact.subheading}
       </p>
@@ -47,15 +47,18 @@ export default function Contact({ compact = false }: { compact?: boolean }) {
             <div className="flex items-center gap-3">
               <span style={{ color: "var(--text-muted)" }}>{ICONS[c.icon]}</span>
               <span
-                className="text-[13px] font-medium text-white/70 group-hover:text-white transition-colors"
-              >
+                className="text-[13px] font-medium transition-colors"
+                style={{ color: "var(--text-secondary)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}>
                 {c.label}
               </span>
             </div>
             <span
-              className="font-mono text-[10px] group-hover:text-white/50 transition-colors"
+              className="font-mono text-[10px] transition-colors"
               style={{ color: "var(--text-faint)" }}
-            >
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-faint)")}>
               {c.mono}
             </span>
           </motion.a>

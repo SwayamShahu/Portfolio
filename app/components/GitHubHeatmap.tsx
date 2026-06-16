@@ -99,7 +99,7 @@ export default function GitHubHeatmap() {
       style={{ bottom: 80, right: 24, zIndex: 5 }}
     >
       <div className="widget-handle" onPointerDown={(e) => dragControls.start(e)}>
-        <div style={{ width: 24, height: 2, borderRadius: 1, background: "rgba(255,255,255,0.12)" }} />
+        <div style={{ width: 24, height: 2, borderRadius: 1, background: "var(--handle-indicator)" }} />
       </div>
 
       <div className="widget-body px-4 pt-3 pb-3">

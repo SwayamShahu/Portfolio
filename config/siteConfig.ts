@@ -2,44 +2,28 @@
  * siteConfig.ts
  * ─────────────────────────────────────────────────────────────
  * Identity, social profiles, contact details, and page metadata.
- *
- * 👉 This is the FIRST file to edit when forking the template.
- * Everything else (projects, experience, skills, blogs) lives in
- * its own file inside /config so the data stays easy to maintain.
  * ─────────────────────────────────────────────────────────────
  */
-
-// ── Types ───────────────────────────────────────────────────────────
 
 export interface Personal {
   firstName: string
   lastName: string
   fullName: string
-  /** Two-letter badge shown in the mobile status bar (e.g. "JD"). */
   initials: string
-  /** Short role shown under your name in the Hero (e.g. "Frontend Engineer"). */
   role: string
-  /** Longer title shown on the résumé header. */
   shortRole: string
-  /** One-paragraph bio shown in the Hero. */
   tagline: string
-  /** "City, Country" — displayed in Hero footer and résumé header. */
   location: string
   age: number | string
-  /** Path (in /public) to your avatar image. */
   avatar: string
-  /** Handle shown next to the avatar (no @). */
   username: string
 }
 
 export interface Social {
   github: string
   twitter: string
-  /** Medium, Hashnode, personal blog, etc. */
   blog: string
-  /** Bare GitHub username used in labels + API calls. */
   githubUsername: string
-  /** Twitter/X handle, no @. */
   twitterHandle: string
 }
 
@@ -47,7 +31,6 @@ export interface ContactRow {
   icon: "mail" | "calendar" | "twitter" | "github"
   href: string
   label: string
-  /** Short monospaced value shown on the right of each row. */
   mono: string
 }
 
@@ -65,7 +48,6 @@ export interface Seo {
 }
 
 export interface Features {
-  /** If true, the arrow-arrow-b-a Konami code triggers an easter egg overlay. */
   konami: boolean
 }
 
@@ -74,56 +56,53 @@ export interface SiteConfig {
   social: Social
   contact: Contact
   seo: Seo
-  /** URL to an external résumé (Notion page, Google Doc, hosted PDF). */
   resumeLink: string
   features: Features
 }
 
-// ── EDIT BELOW ──────────────────────────────────────────────────────
-
 export const siteConfig: SiteConfig = {
   personal: {
-    firstName: "Jane",
-    lastName: "Developer",
-    fullName: "Jane Developer",
-    initials: "JD",
-    role: "Software Engineer",
-    shortRole: "Full-Stack Software Engineer",
+    firstName: "Swayam",
+    lastName: "Shahu",
+    fullName: "Swayam Shahu",
+    initials: "SS",
+    role: "Java Backend Engineer",
+    shortRole: "Java Backend Engineer | Spring Boot | Microservices | Docker",
     tagline:
-      "A short, opinionated sentence about what you build and why it matters. Keep it two sentences at most — this is the first thing visitors read.",
-    location: "Earth",
-    age: 20,
+      "Final-year B.Tech CS student with hands-on experience in Java, Spring Boot, Microservices, and Docker. I enjoy understanding what users actually need, thinking through what makes sense to build, and then designing a clean solution – not just writing code.",
+    location: "Nagpur, India",
+    age: 21,
     avatar: "/avatar.svg",
-    username: "janedeveloper",
+    username: "SwayamShahu",
   },
 
   social: {
-    github: "https://github.com/janedeveloper",
-    twitter: "https://x.com/janedeveloper",
-    blog: "https://example.com/blog",
-    githubUsername: "janedeveloper",
-    twitterHandle: "janedeveloper",
+    github: "https://github.com/SwayamShahu",
+    twitter: "https://x.com/SwayamShahu",
+    blog: "https://leetcode.com/u/SwayamShahu",
+    githubUsername: "SwayamShahu",
+    twitterHandle: "SwayamShahu",
   },
 
   contact: {
-    email: "hello@example.com",
-    calendar: "https://cal.com/janedeveloper",
+    email: "swayamshahu153@gmail.com",
+    calendar: "https://linkedin.com/in/swayam-shahu",
     heading: "Let's Connect",
-    subheading: "Open to collaborations, freelance work, or just a conversation.",
+    subheading: "Open to entry-level Java Backend / Software Engineer roles. Let's talk!",
     rows: [
-      { icon: "mail",     href: "mailto:hello@example.com",             label: "Email",           mono: "hello@example.com" },
-      { icon: "calendar", href: "https://cal.com/janedeveloper",         label: "Schedule a call", mono: "cal.com/janedeveloper" },
-      { icon: "twitter",  href: "https://x.com/janedeveloper",           label: "X / Twitter",     mono: "@janedeveloper" },
-      { icon: "github",   href: "https://github.com/janedeveloper",      label: "GitHub",          mono: "janedeveloper" },
+      { icon: "mail",     href: "mailto:swayamshahu153@gmail.com",          label: "Email",     mono: "swayamshahu153@gmail.com" },
+      { icon: "calendar", href: "https://linkedin.com/in/swayam-shahu",     label: "LinkedIn",  mono: "linkedin.com/in/swayam-shahu" },
+      { icon: "twitter",  href: "https://leetcode.com/u/SwayamShahu",       label: "LeetCode",  mono: "leetcode.com/u/SwayamShahu" },
+      { icon: "github",   href: "https://github.com/SwayamShahu",           label: "GitHub",    mono: "SwayamShahu" },
     ],
   },
 
   seo: {
-    title: "Jane Developer — Portfolio",
-    description: "Personal portfolio and writing by Jane Developer.",
+    title: "Swayam Shahu — Java Backend Engineer",
+    description: "Portfolio of Swayam Shahu — Java Backend Engineer specialising in Spring Boot, Microservices, Docker, and REST APIs.",
   },
 
-  resumeLink: "https://example.com/resume",
+  resumeLink: "https://drive.google.com/file/d/1eadcQEtxjUuHC4RqLoMBfv8Zf9ImQQs3/view?usp=drivesdk",
 
   features: {
     konami: false,

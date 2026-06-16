@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import { Twitter, Github, BookOpen } from 'lucide-react'
+import { Linkedin, Github, Mail } from 'lucide-react'
 // Text + social links come from /config/siteConfig.ts.
 import { siteConfig } from '@/config/siteConfig'
 
@@ -14,8 +14,8 @@ export default function Hero({ compact = false }: { compact?: boolean }) {
       {/* Name — edit siteConfig.personal.firstName / lastName */}
       <div className="mb-5">
         <h1
-          className="font-semibold tracking-tight text-white leading-[0.92] mb-3"
-          style={{ fontSize: compact ? 46 : 56 }}
+          className="font-semibold tracking-tight leading-[0.92] mb-3"
+          style={{ fontSize: compact ? 46 : 56, color: "var(--text-primary)" }}
         >
           {personal.firstName}<br />{personal.lastName}
         </h1>
@@ -55,9 +55,9 @@ export default function Hero({ compact = false }: { compact?: boolean }) {
 
         <div className="flex items-center gap-1">
           {[
-            { href: social.twitter, icon: <Twitter size={15} />, label: "X" },
-            { href: social.github,  icon: <Github size={15} />,  label: "GitHub" },
-            { href: social.blog,    icon: <BookOpen size={15} />, label: "Blog" },
+            { href: social.github,                         icon: <Github size={15} />,   label: "GitHub" },
+            { href: "https://linkedin.com/in/swayam-shahu", icon: <Linkedin size={15} />, label: "LinkedIn" },
+            { href: "mailto:swayamshahu153@gmail.com",       icon: <Mail size={15} />,     label: "Email" },
           ].map(({ href, icon, label }) => (
             <a
               key={label}

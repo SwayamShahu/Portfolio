@@ -51,7 +51,11 @@ export default function Experience({ compact = false }: { compact?: boolean }) {
             >
               <div className="flex items-baseline justify-between gap-4 mb-1.5">
                 <div className="flex items-baseline gap-2 min-w-0">
-                  <span className="text-[14px] font-semibold text-white group-hover:text-white/80 transition-colors truncate">
+                  <span
+                    className="text-[14px] font-semibold transition-colors truncate"
+                    style={{ color: "var(--text-primary)" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-primary)")}>
                     {exp.company}
                   </span>
                   <span

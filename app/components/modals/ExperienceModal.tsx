@@ -25,7 +25,7 @@ export default function ExperienceModal({ experience, isOpen, onClose }: Experie
       >
         {/* Header */}
         <div className="px-6 pt-6 pb-5" style={{ borderBottom: "1px solid var(--separator)" }}>
-          <DialogTitle className="text-[18px] font-semibold text-white mb-1">
+          <DialogTitle className="text-[18px] font-semibold mb-1" style={{ color: "var(--text-primary)" }}>
             {experience.role}
           </DialogTitle>
           <p className="font-mono text-[11px] uppercase tracking-[0.1em]" style={{ color: "var(--text-secondary)" }}>

@@ -7,7 +7,6 @@ import MenuBar from "./MenuBar"
 import MacWindow from "./MacWindow"
 import Dock from "./Dock"
 import GitHubHeatmap from "./GitHubHeatmap"
-import NowPlaying from "./NowPlaying"
 import StatusWidget from "./widgets/StatusWidget"
 import QuoteWidget from "./widgets/QuoteWidget"
 import LinksWidget from "./widgets/LinksWidget"
@@ -151,7 +150,6 @@ export default function Desktop({ posts }: { posts: PostMeta[] }) {
       <CalendarWidget />
       <VisitorWidget />
       <ThemeWidget />
-      <NowPlaying />
       <GitHubHeatmap />
 
       <Dock openWindows={openWindows} onToggleWindow={toggleWindow} />
@@ -199,7 +197,7 @@ export default function Desktop({ posts }: { posts: PostMeta[] }) {
               <p className="font-mono text-[10px] uppercase tracking-[0.14em] mb-4" style={{ color: "rgba(255,255,255,0.3)" }}>
                 About this Portfolio
               </p>
-              <h2 id="about-overlay-title" className="text-[22px] font-semibold text-white mb-1">macOS Portfolio</h2>
+              <h2 id="about-overlay-title" className="text-[22px] font-semibold text-white mb-1">Swayam&apos;s Portfolio</h2>
               <p className="font-mono text-[11px] mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>Version 1.0.0</p>
               <div
                 className="text-left space-y-2 py-4 mb-5"

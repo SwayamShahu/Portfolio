@@ -26,7 +26,7 @@
   --dock-bg: rgba(18,18,18,0.92);
   --tooltip-bg: #1a1a1a;
 
-  /* accent — used for active states, open indicators, today highlight */
+  /* accent */
   --accent: rgba(255,255,255,0.65);
   --accent-subtle: rgba(255,255,255,0.12);
 
@@ -35,6 +35,33 @@
 
   /* separator */
   --separator: rgba(255,255,255,0.07);
+
+  /* menubar */
+  --menubar-text-primary: rgba(255,255,255,0.9);
+  --menubar-text-sep: rgba(255,255,255,0.15);
+  --menubar-text-app: rgba(255,255,255,0.4);
+  --menubar-text-meta: rgba(255,255,255,0.35);
+  --menubar-text-time: rgba(255,255,255,0.55);
+
+  /* dock icon states */
+  --dock-icon-bg: rgba(255,255,255,0.05);
+  --dock-icon-bg-hover: rgba(255,255,255,0.08);
+  --dock-icon-bg-active: rgba(255,255,255,0.1);
+  --dock-icon-color: rgba(255,255,255,0.5);
+  --dock-icon-color-active: rgba(255,255,255,0.9);
+
+  /* window close button (unfocused) */
+  --win-btn-inactive: rgba(255,255,255,0.12);
+
+  /* drag handle indicator bar */
+  --handle-indicator: rgba(255,255,255,0.12);
+
+  /* window chrome */
+  --win-title-focused: rgba(255,255,255,0.45);
+  --win-title-unfocused: rgba(255,255,255,0.20);
+  --win-btn-dot: rgba(255,255,255,0.08);
+  --win-shadow-focused: 0 40px 80px rgba(0,0,0,0.9), 0 0 0 0.5px rgba(0,0,0,1);
+  --win-shadow-unfocused: 0 16px 40px rgba(0,0,0,0.7), 0 0 0 0.5px rgba(0,0,0,1);
 }
 
 /* ── Amber — deep violet night with warm amber horizon ────────────────────── */
@@ -119,6 +146,69 @@
   --text-secondary: rgba(255,200,130,0.48);
   --text-muted: rgba(255,180,100,0.26);
   --text-faint: rgba(255,165,80,0.2);
+}
+
+/* ── Light — clean white with dark text ───────────────────────────────────── */
+[data-theme="light"] {
+  --background: #f2f2f2;
+  --foreground: #111111;
+  --text-primary: rgba(0,0,0,0.85);
+  --text-secondary: rgba(0,0,0,0.60);
+  --text-muted: rgba(0,0,0,0.42);
+  --text-faint: rgba(0,0,0,0.30);
+
+  --bg-base: #ebebeb;
+  --bg-dot: rgba(0,0,0,0.08);
+  --titlebar-bg: #e0e0e0;
+  --window-bg: #ffffff;
+  --terminal-bg: #f8f8f8;
+  --menubar-bg: #d4d4d4;
+  --window-border-focused: rgba(0,0,0,0.20);
+  --window-border-unfocused: rgba(0,0,0,0.10);
+
+  --widget-bg: #ffffff;
+  --widget-border: rgba(0,0,0,0.10);
+  --drag-handle-bg: rgba(0,0,0,0.04);
+  --item-separator: rgba(0,0,0,0.07);
+  --dock-bg: rgba(210,210,210,0.92);
+  --tooltip-bg: #e0e0e0;
+
+  --accent: rgba(0,0,0,0.72);
+  --accent-subtle: rgba(0,0,0,0.10);
+  --heatmap-empty: rgba(0,0,0,0.08);
+  --separator: rgba(0,0,0,0.08);
+
+  /* menubar */
+  --menubar-text-primary: rgba(0,0,0,0.85);
+  --menubar-text-sep: rgba(0,0,0,0.18);
+  --menubar-text-app: rgba(0,0,0,0.50);
+  --menubar-text-meta: rgba(0,0,0,0.40);
+  --menubar-text-time: rgba(0,0,0,0.65);
+
+  /* dock icon states */
+  --dock-icon-bg: rgba(0,0,0,0.06);
+  --dock-icon-bg-hover: rgba(0,0,0,0.10);
+  --dock-icon-bg-active: rgba(0,0,0,0.13);
+  --dock-icon-color: rgba(0,0,0,0.50);
+  --dock-icon-color-active: rgba(0,0,0,0.85);
+
+  /* window close button (unfocused) */
+  --win-btn-inactive: rgba(0,0,0,0.12);
+
+  /* drag handle indicator bar */
+  --handle-indicator: rgba(0,0,0,0.15);
+
+  /* window chrome */
+  --win-title-focused: rgba(0,0,0,0.55);
+  --win-title-unfocused: rgba(0,0,0,0.30);
+  --win-btn-dot: rgba(0,0,0,0.12);
+  --win-shadow-focused: 0 20px 50px rgba(0,0,0,0.15), 0 0 0 0.5px rgba(0,0,0,0.12);
+  --win-shadow-unfocused: 0 8px 24px rgba(0,0,0,0.10), 0 0 0 0.5px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .album-wallpaper {
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e8e8e8 60%, #d4d4d4 100%);
+  opacity: 0.5;
 }
 
 @theme inline {

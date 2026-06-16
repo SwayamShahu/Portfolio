@@ -111,8 +111,8 @@ export default function MacWindow({
                 ? "1px solid var(--window-border-focused)"
                 : "1px solid var(--window-border-unfocused)",
               boxShadow: isFocused
-                ? "0 40px 80px rgba(0,0,0,0.9), 0 0 0 0.5px rgba(0,0,0,1)"
-                : "0 16px 40px rgba(0,0,0,0.7), 0 0 0 0.5px rgba(0,0,0,1)",
+                ? "var(--win-shadow-focused)"
+                : "var(--win-shadow-unfocused)",
               transition: "box-shadow 0.2s ease, border-color 0.2s ease",
             }}
           >
@@ -132,14 +132,14 @@ export default function MacWindow({
                   aria-label={`Close ${title}`}
                   className="w-2.5 h-2.5 rounded-full flex-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-1 focus-visible:ring-offset-[var(--titlebar-bg)]"
                   style={{
-                    background: isFocused ? "#ff5f57" : "rgba(255,255,255,0.12)",
+                    background: isFocused ? "#ff5f57" : "var(--win-btn-inactive)",
                     transition: "background 0.15s",
                   }}
                   onClick={(e) => { e.stopPropagation(); onClose() }}
                   onPointerDown={(e) => e.stopPropagation()}
                 />
-                <span aria-hidden="true" className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(255,255,255,0.08)" }} />
-                <span aria-hidden="true" className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(255,255,255,0.08)" }} />
+                <span aria-hidden="true" className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--win-btn-dot)" }} />
+                <span aria-hidden="true" className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--win-btn-dot)" }} />
               </div>
 
               {/* Title — rendered as h2 for correct heading semantics. */}
@@ -147,7 +147,7 @@ export default function MacWindow({
                 id={titleId}
                 className="absolute left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.1em] pointer-events-none m-0 font-normal"
                 style={{
-                  color: isFocused ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.2)",
+                  color: isFocused ? "var(--win-title-focused)" : "var(--win-title-unfocused)",
                   transition: "color 0.2s",
                 }}
               >

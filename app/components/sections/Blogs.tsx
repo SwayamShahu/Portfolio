@@ -38,12 +38,14 @@ export default function Blogs({
           className="font-mono text-[10px] uppercase tracking-[0.14em]"
           style={{ color: "var(--text-muted)" }}
         >
-          Writing
+          Research
         </p>
         <Link
           href="/blog"
-          className="font-mono text-[10px] uppercase tracking-[0.1em] hover:text-white transition-colors"
+          className="font-mono text-[10px] uppercase tracking-[0.1em] transition-colors"
           style={{ color: "var(--text-muted)" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
         >
           View all →
         </Link>
@@ -66,7 +68,11 @@ export default function Blogs({
               }}
             >
               <div className="flex-1 min-w-0">
-                <p className="text-[13px] font-medium text-white/80 group-hover:text-white transition-colors leading-snug mb-1">
+                <p
+                  className="text-[13px] font-medium leading-snug mb-1 transition-colors"
+                  style={{ color: "var(--text-secondary)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}>
                   {post.title}
                 </p>
                 <p className="text-[11px] leading-relaxed line-clamp-1" style={{ color: "var(--text-muted)" }}>
@@ -80,7 +86,7 @@ export default function Blogs({
                 <ArrowUpRight
                   size={12}
                   className="opacity-0 group-hover:opacity-50 transition-opacity"
-                  style={{ color: "white" }}
+                  style={{ color: "var(--text-primary)" }}
                 />
               </div>
             </Link>

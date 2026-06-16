@@ -2,15 +2,14 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence, useDragControls } from "framer-motion"
-// Quotes live in /config/quotes.ts — edit there to customise.
-import { quotes as QUOTES } from "@/config/quotes"
+import { quotes as SKILLS } from "@/config/quotes"
 
 export default function QuoteWidget() {
   const [idx, setIdx] = useState(0)
   const dragControls = useDragControls()
 
   useEffect(() => {
-    const id = setInterval(() => setIdx((i) => (i + 1) % QUOTES.length), 7000)
+    const id = setInterval(() => setIdx((i) => (i + 1) % SKILLS.length), 3000)
     return () => clearInterval(id)
   }, [])
 
@@ -25,26 +24,33 @@ export default function QuoteWidget() {
       style={{ top: 48, left: 24, zIndex: 5, width: 240 }}
     >
       <div className="widget-handle" onPointerDown={(e) => dragControls.start(e)}>
-        <div style={{ width: 24, height: 2, borderRadius: 1, background: "rgba(255,255,255,0.12)" }} />
+        <div style={{ width: 24, height: 2, borderRadius: 1, background: "var(--handle-indicator)" }} />
       </div>
 
       <div className="widget-body px-4 py-3.5" style={{ minHeight: 74 }}>
+        <p
+          className="font-mono text-[9px] uppercase tracking-[0.1em] mb-2.5"
+          style={{ color: "var(--text-faint)" }}
+        >
+          Skills
+        </p>
+
         <AnimatePresence mode="wait">
           <motion.p
             key={idx}
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.35 }}
-            className="text-[12px] leading-relaxed"
+            transition={{ duration: 0.3 }}
+            className="text-[12px] leading-relaxed font-medium"
             style={{ color: "var(--text-secondary)" }}
           >
-            &ldquo;{QUOTES[idx]}&rdquo;
+            {SKILLS[idx]}
           </motion.p>
         </AnimatePresence>
 
         <div className="flex items-center gap-1 mt-3">
-          {QUOTES.map((_, i) => (
+          {SKILLS.map((_, i) => (
             <button
               key={i}
               onClick={() => setIdx(i)}
@@ -57,13 +63,6 @@ export default function QuoteWidget() {
             />
           ))}
         </div>
-
-        <p
-          className="font-mono text-[9px] uppercase tracking-[0.1em] mt-2"
-          style={{ color: "var(--text-faint)" }}
-        >
-          — cb · writing
-        </p>
       </div>
     </motion.div>
   )

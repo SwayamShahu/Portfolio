@@ -26,7 +26,11 @@ function ProjectList({ projects }: { projects: ProjectItem[] }) {
         >
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[13px] font-semibold text-white group-hover:text-white/75 transition-colors">
+              <span
+                className="text-[13px] font-semibold transition-colors"
+                style={{ color: "var(--text-primary)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-primary)")}>
                 {p.title}
               </span>
               {p.stars !== undefined && (
@@ -60,7 +64,7 @@ function ProjectList({ projects }: { projects: ProjectItem[] }) {
           <ArrowUpRight
             size={14}
             className="flex-none mt-0.5 opacity-0 group-hover:opacity-60 transition-opacity"
-            style={{ color: "white" }}
+            style={{ color: "var(--text-primary)" }}
           />
         </motion.a>
       ))}

@@ -1,14 +1,5 @@
 /**
  * projects.ts
- * ─────────────────────────────────────────────────────────────
- * All projects shown in the Projects window.
- * Split into two lists: `personal` (side projects) and `client`
- * (paid / contracted work). Both use the same ProjectItem shape.
- *
- *  - `tech`   → array of tags rendered beneath the description.
- *  - `stars`  → optional — shown next to the title if present.
- *  - `status` → optional — rendered as a pill (e.g. "Paused").
- * ─────────────────────────────────────────────────────────────
  */
 
 export interface ProjectItem {
@@ -28,38 +19,42 @@ export interface ProjectsConfig {
 export const projects: ProjectsConfig = {
   personal: [
     {
-      title: "Example Project",
-      description: "One-sentence description of what you built and why it matters.",
-      tech: ["TypeScript", "Next.js", "PostgreSQL"],
-      stars: 42,
-      link: "https://github.com/janedeveloper/example-project",
+      title: "Smart Communication Analyzer",
+      description: "A 7-service Spring Cloud platform (Eureka, Config Server, API Gateway + 4 domain services) with Docker Compose for single-command startup and Eureka service discovery for zero-downtime redeployment.",
+      tech: ["Spring Boot", "Spring Cloud", "Docker Compose", "Eureka", "API Gateway"],
+      link: "https://github.com/SwayamShahu/Smart_Communication_Analyzer",
     },
     {
-      title: "Another Project",
-      description: "A second example. Keep each description tight — two lines max reads best.",
-      tech: ["Go", "Redis"],
-      link: "https://github.com/janedeveloper/another-project",
+      title: "FinTrack Pro – Fintech App",
+      description: "3-tier fintech platform with expense tracking, JWT/RBAC security, and ML-driven anomaly detection (Isolation Forest + LSTM) delivering real-time notifications with <1s latency across 10+ backend components.",
+      tech: ["Spring Boot 3.2", "React", "TensorFlow", "JWT", "RBAC", "MySQL"],
+      link: "https://github.com/SwayamShahu/Fintech-full_stack_project",
     },
     {
-      title: "Paused Experiment",
-      description: "A project you started but haven't touched in a while — mark it with a status.",
-      tech: ["Rust"],
-      status: "Paused",
-      link: "https://github.com/janedeveloper/experiment",
+      title: "Quiz Management System",
+      description: "Role-based quiz platform with separate student and teacher workflows, secured by JWT + BCrypt, Spring Security CORS configuration, and granular endpoint authorization.",
+      tech: ["Spring Boot", "JWT", "Spring Security", "MySQL", "React"],
+      link: "https://github.com/SwayamShahu/Quiz-Application-Project",
+    },
+    {
+      title: "ShopEase – E-Commerce Backend",
+      description: "RESTful backend for product browsing, cart management, and order placement with Spring Data JPA, JWT auth, role-based access control, and unit tests using JUnit and Mockito.",
+      tech: ["Java 21", "Spring Boot 3.2", "MySQL", "JUnit", "Mockito", "Spring Security"],
+      link: "https://github.com/SwayamShahu/E-commerce-Full-Stack-Project",
     },
   ],
 
   client: [
     {
-      title: "Client Work Sample",
-      description: "Replace with a short, neutral description of client work you want to show off.",
-      tech: ["React", "TailwindCSS"],
-      link: "https://example.com",
+      title: "Resume Builder (AI-Powered)",
+      description: "AI-powered tool that generates ATS-optimized resumes with semantic scoring, built at TalentXMinds. Containerized with Docker for consistent team environments.",
+      tech: ["Spring Boot", "ReactJS", "Docker", "AI/LLM"],
+      status: "In Progress",
+      link: "https://github.com/SwayamShahu",
     },
   ],
 }
 
-/** Résumé-only condensed project highlights (short names + long descriptions). */
 export interface ResumeProjectItem {
   name: string
   desc: string
@@ -67,11 +62,19 @@ export interface ResumeProjectItem {
 
 export const resumeProjects: ResumeProjectItem[] = [
   {
-    name: "Example Project",
-    desc: "Slightly longer description suitable for a résumé — focus on outcomes, scale, and the specific technologies involved.",
+    name: "Smart Communication Analyzer",
+    desc: "7-service Spring Cloud platform with Eureka, Config Server, API Gateway, and Docker Compose for single-command startup and zero-downtime redeployment.",
   },
   {
-    name: "Another Project",
-    desc: "Second résumé-worthy project. Two lines is plenty.",
+    name: "FinTrack Pro",
+    desc: "Fintech platform with JWT/RBAC, ML anomaly detection (Isolation Forest + LSTM), and real-time notifications at <1s latency across 10+ backend components.",
+  },
+  {
+    name: "Quiz Management System",
+    desc: "Role-based quiz platform with Spring Security, JWT + BCrypt auth, granular endpoint authorization, and CORS configuration.",
+  },
+  {
+    name: "ShopEase – E-Commerce Backend",
+    desc: "RESTful Spring Boot backend with JPA/Hibernate, JWT auth, RBAC, and JUnit/Mockito unit tests for service layer validation.",
   },
 ]

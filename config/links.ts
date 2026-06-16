@@ -1,24 +1,25 @@
 /**
- * links.ts
- * ─────────────────────────────────────────────────────────────
- * Curated external reading list shown in the LinksWidget on the
- * desktop. Each entry is an outbound link with a short tag used
- * for display only.
- * ─────────────────────────────────────────────────────────────
+ * links.ts — Research papers shown in the Research widget on the desktop.
  */
 
 export interface LinkItem {
   title: string
   author: string
   url: string
-  /** Freeform short label displayed under the author (e.g. "rust"). */
   tag: string
 }
 
 export const links: LinkItem[] = [
-  { title: "The Zen of Erlang",      author: "Fred Hebert",     url: "https://ferd.ca/the-zen-of-erlang.html",                  tag: "systems" },
-  { title: "Fearless Concurrency",   author: "The Rust Book",   url: "https://doc.rust-lang.org/book/ch16-00-concurrency.html", tag: "rust" },
-  { title: "without.boats",          author: "withoutboats",    url: "https://without.boats",                                   tag: "rust" },
-  { title: "Meditations",            author: "Marcus Aurelius", url: "https://www.gutenberg.org/ebooks/2680",                   tag: "philosophy" },
-  { title: "Solana Program Library", author: "Solana Labs",     url: "https://spl.solana.com",                                  tag: "solana" },
+  {
+    title: "Low-Light Image Enhancement via SwinIR-Based Denoising and Attention U-Net with Laplacian Pyramid Decomposition",
+    author: "IEEE AICARE 2025",
+    url: "https://ieeexplore.ieee.org/document/11402795",
+    tag: "IEEE · AI/ML",
+  },
+  {
+    title: "A Study on Design and Development of Low-Light Image Enhancement",
+    author: "I-Manager Journal",
+    url: "https://openurl.ebsco.com/EPDB%3Agcd%3A12%3A13641244/detailv2?sid=ebsco%3Aplink%3Acrawler&id=ebsco%3Adoi%3A10.26634%2Fjfet.20.4.22209&crl=f&link_origin=com.google.android.googlequicksearchbox",
+    tag: "Peer-Reviewed",
+  },
 ]

@@ -2,17 +2,10 @@
 
 import { useRef, useState } from "react"
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion"
-import { Github } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 import { siteConfig } from "@/config/siteConfig"
 import { windows } from "@/config/windows"
 
-function XIcon({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  )
-}
 
 type DockItem =
   | { kind: "window"; id: string; label: string; icon: React.ReactNode }
@@ -26,8 +19,8 @@ const dockApps: DockItem[] = windows.map((w) => ({
 }))
 
 const dockLinks: DockItem[] = [
-  { kind: "link", id: "github",  label: "GitHub", icon: <Github size={20} strokeWidth={1.5} aria-hidden="true" />, url: siteConfig.social.github },
-  { kind: "link", id: "twitter", label: "X",      icon: <XIcon size={18} />,                                        url: siteConfig.social.twitter },
+  { kind: "link", id: "github",   label: "GitHub",   icon: <Github size={20} strokeWidth={1.5} aria-hidden="true" />,   url: siteConfig.social.github },
+  { kind: "link", id: "linkedin", label: "LinkedIn", icon: <Linkedin size={20} strokeWidth={1.5} aria-hidden="true" />, url: "https://linkedin.com/in/swayam-shahu" },
 ]
 
 function DockIcon({
@@ -79,12 +72,13 @@ function DockIcon({
         type="button"
         aria-label={item.label}
         aria-pressed={item.kind === "window" ? isOpen : undefined}
-        style={{ width: size, height: size }}
-        animate={{
-          background: isOpen ? "rgba(255,255,255,0.1)" : hovered ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.05)",
-          color: isOpen ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.5)",
+        style={{
+          width: size,
+          height: size,
+          background: isOpen ? "var(--dock-icon-bg-active)" : hovered ? "var(--dock-icon-bg-hover)" : "var(--dock-icon-bg)",
+          color: isOpen ? "var(--dock-icon-color-active)" : "var(--dock-icon-color)",
+          transition: "background 0.15s, color 0.15s",
         }}
-        transition={{ duration: 0.15 }}
         className="rounded-xl flex items-center justify-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
         whileTap={{ scale: 0.88 }}
         onClick={onActivate}

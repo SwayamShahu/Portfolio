@@ -61,7 +61,7 @@ export default function ThemeWidget() {
         }}
         onPointerDown={(e) => dragControls.start(e)}
       >
-        <div style={{ width: 28, height: 3, borderRadius: 2, background: "rgba(255,255,255,0.12)" }} />
+        <div style={{ width: 28, height: 3, borderRadius: 2, background: "var(--handle-indicator)" }} />
       </div>
 
       {/* Widget body */}
