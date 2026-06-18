@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react"
 import Hero from "./Hero"
-import Experience from "./sections/Experience"
 import Projects from "./sections/Projects"
+import Certificates from "./sections/Certificates"
 import Blogs from "./sections/Blogs"
 import Contact from "./sections/Contact"
 import Resume from "./sections/Resume"
@@ -12,12 +12,12 @@ import { siteConfig } from "@/config/siteConfig"
 import type { PostMeta } from "@/lib/posts"
 
 const NAV = [
-  { id: "about",      label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "projects",   label: "Projects" },
-  { id: "writing",    label: "Writing" },
-  { id: "contact",    label: "Contact" },
-  { id: "resume",     label: "Résumé" },
+  { id: "about",        label: "About" },
+  { id: "projects",     label: "Client Project" },
+  { id: "certificates", label: "Certificates" },
+  { id: "resume",       label: "Résumé" },
+  { id: "writing",      label: "Research" },
+  { id: "contact",      label: "Contact" },
 ]
 
 const BORDER = "1px solid rgba(255,255,255,0.07)"
@@ -100,12 +100,16 @@ export default function MobileLayout({ posts }: { posts: PostMeta[] }) {
         <Hero />
       </section>
 
-      <section id="experience" style={{ borderBottom: BORDER }}>
-        <Experience compact />
-      </section>
-
       <section id="projects" style={{ borderBottom: BORDER }}>
         <Projects compact />
+      </section>
+
+      <section id="certificates" style={{ borderBottom: BORDER }}>
+        <Certificates compact />
+      </section>
+
+      <section id="resume" style={{ borderBottom: BORDER }}>
+        <Resume compact />
       </section>
 
       <section id="writing" style={{ borderBottom: BORDER }}>
@@ -114,10 +118,6 @@ export default function MobileLayout({ posts }: { posts: PostMeta[] }) {
 
       <section id="contact" style={{ borderBottom: BORDER }}>
         <Contact compact />
-      </section>
-
-      <section id="resume" style={{ borderBottom: BORDER }}>
-        <Resume compact />
       </section>
 
       {/* Footer — edit siteConfig.personal.fullName */}

@@ -76,11 +76,29 @@ export default function Projects({ compact = false }: { compact?: boolean }) {
   const [tab, setTab] = useState<"personal" | "client">("personal")
   const { personal: personalProjects, client: clientProjects } = projects
 
+  if (compact) {
+    return (
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="px-6 py-6"
+      >
+        <p
+          className="font-mono text-[10px] uppercase tracking-[0.14em] mb-5"
+          style={{ color: "var(--text-muted)" }}
+        >
+          Client Project
+        </p>
+        <ProjectList projects={clientProjects} />
+      </motion.section>
+    )
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className={compact ? "px-6 py-6" : "py-20 px-6"}
+      className="py-20 px-6"
     >
       <p
         className="font-mono text-[10px] uppercase tracking-[0.14em] mb-5"
